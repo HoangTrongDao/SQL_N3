@@ -1,0 +1,21 @@
+﻿MaHDKG,MaBDS,MaMoiGioi,LoaiKyGui,NgayBatDau,NgayKetThuc,TrangThai
+KG001,BDS101,MG001,Doc quyen,2026-10-01,2026-12-31,Dang hieu luc
+KG002,BDS102,MG002,Khong doc quyen,2026-09-01,2026-12-31,Dang hieu luc
+KG003,BDS103,MG001,Doc quyen,2026-01-01,2026-06-30,Het han
+KG004,BDS104,MG003,Doc quyen,2026-10-15,2027-01-15,Dang hieu luc
+KG005,BDS105,MG001,Doc quyen,2026-10-01,2026-12-31,Dang hieu luc
+KG006,BDS106,MG004,Khong doc quyen,2026-02-01,2026-12-31,Dang hieu luc
+KG007,BDS107,MG005,Doc quyen,2026-09-15,2026-12-15,Dang hieu luc
+KG008,BDS108,MG002,Doc quyen,2026-10-01,2027-03-31,Dang hieu luc
+KG009,BDS109,MG006,Khong doc quyen,2026-01-01,2026-08-31,Het han
+KG010,BDS110,MG007,Khong doc quyen,2026-10-01,2027-01-31,Dang hieu luc
+KG011,BDS111,MG003,Doc quyen,2026-10-01,2026-12-31,Dang hieu luc
+KG012,BDS112,MG010,Khong doc quyen,2026-10-01,2027-01-31,Dang hieu luc
+KG013,BDS113,MG002,Doc quyen,2026-01-01,2026-05-31,Het han
+KG014,BDS114,MG008,Khong doc quyen,2026-10-01,2027-01-31,Dang hieu luc
+KG015,BDS115,MG005,Doc quyen,2026-10-01,2027-01-31,Dang hieu luc
+KG016,BDS116,MG006,Khong doc quyen,2026-10-01,2027-01-31,Dang hieu luc
+KG017,BDS117,MG009,Doc quyen,2026-10-01,2027-01-31,Dang hieu luc
+KG018,BDS118,MG004,Doc quyen,2026-01-01,2026-04-30,Het han
+KG019,BDS119,MG010,Khong doc quyen,2026-10-01,2027-01-31,Dang hieu luc
+KG020,BDS120,MG008,Khong doc quyen,2026-10-01,2027-01-31,Dang hieu luc
