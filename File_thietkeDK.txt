@@ -1,0 +1,82 @@
+
+•Thiết kế CSDL chi tiết: Thiết kế CSDL theo phương pháp E/R, đạt chuẩn 3NF và các ràng buộc:
+1.	CHECK: DienTich > 0; GiaBan > 0; PhanTramHoaHong in [0.5, 10.0].
+2.	UNIQUE: Số sổ đỏ/sổ hồng (SoGoiGCN) là duy nhất trên toàn hệ thống.
+3.	Business Rules: Một BĐS đang có hợp đồng bán độc quyền còn hiệu lực không được đăng tải bán bởi môi giới khác; Hợp đồng đặt cọc tự động hủy nếu quá 30 ngày khách không tiến hành ký Hợp đồng mua bán.
+
+3. Các ràng buộc toàn vẹn dữ liệu
+3.1. Ràng buộc CHECK
+Yêu cầu:
+- Diện tích bất động sản phải lớn hơn 0.
+- Giá bán phải lớn hơn 0.
+- Phần trăm hoa hồng nằm trong khoảng từ 0.5 đến 10.0.
+Code SQL:
+-- Kiểm tra diện tích và giá bán
+CREATE TABLE BatDongSan (
+    DienTich REAL NOT NULL CHECK (DienTich > 0),
+    GiaBan REAL NOT NULL CHECK (GiaBan > 0)
+);
+
+-- Ràng buộc phần trăm hoa hồng
+CREATE TABLE HoaHong (
+    PhanTramHoaHong REAL
+    CHECK (PhanTramHoaHong BETWEEN 0.5 AND 10.0)
+);
+
+
+Đây là các câu lệnh minh họa ràng buộc, không chạy lại hai lệnh CREATE TABLE này vì hai bảng đã được tạo trước đó.
+3.2. Ràng buộc UNIQUE
+Yêu cầu: Số giấy chứng nhận quyền sử dụng đất (sổ đỏ/sổ hồng) phải duy nhất trên toàn hệ thống.
+
+Trong bảng BatDongSan:
+SoGoiGCN TEXT NOT NULL UNIQUE
+
+Nếu bảng đã tồn tại, có thể tạo chỉ mục UNIQUE:
+CREATE UNIQUE INDEX IF NOT EXISTS
+idx_BatDongSan_SoGoiGCN
+ON BatDongSan(SoGoiGCN);
+
+
+Kiểm tra các số giấy chứng nhận bị trùng:
+SELECT SoGoiGCN, COUNT(*) AS SoLan
+FROM BatDongSan
+GROUP BY SoGoiGCN
+HAVING COUNT(*) > 1;
+
+Nếu không có kết quả, dữ liệu hiện tại không có số giấy chứng nhận trùng lặp.
+3.3. Business Rules – Quy tắc nghiệp vụ
+Quy tắc 1: Bất động sản có hợp đồng bán độc quyền còn hiệu lực không được đăng tải bởi môi giới khác.
+
+Sử dụng Trigger:
+CREATE TRIGGER KiemTraDangTin_DocQuyen
+BEFORE INSERT ON TinDang
+WHEN EXISTS (
+    SELECT 1
+    FROM HopDongKyGui H
+    WHERE H.MaBDS = NEW.MaBDS
+      AND H.LoaiKyGui = 'Doc quyen'
+      AND H.TrangThai = 'Con hieu luc'
+      AND date('now') BETWEEN
+          date(H.NgayBatDau) AND date(H.NgayKetThuc)
+      AND H.MaMoiGioi <> NEW.MaMoiGioi
+)
+BEGIN
+    SELECT RAISE(ABORT,
+        'BDS dang co hop dong doc quyen voi moi gioi khac!');
+END;
+
+
+Quy tắc 2: Hợp đồng đặt cọc tự động hủy nếu quá 30 ngày khách hàng không tiến hành ký hợp đồng mua bán.
+
+Sử dụng câu lệnh cập nhật:
+UPDATE HopDongDatCoc
+SET TrangThai = 'Da huy'
+WHERE date(NgayDatCoc, '+30 days') < date('now')
+  AND TrangThai <> 'Da huy'
+  AND NOT EXISTS (
+      SELECT 1
+      FROM GiaoDich GD
+      JOIN HopDongMuaBan HDMB
+          ON GD.MaGiaoDich = HDMB.MaGiaoDich
+      WHERE GD.MaHDDC = HopDongDatCoc.MaHDDC
+  );

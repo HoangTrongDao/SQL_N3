@@ -1,0 +1,136 @@
+1. kiểm tra diện tích >=0
+select * from batdongsan
+where dientich >=0;
+2. kiểm tra giá bán >=0
+select * from batdongsan 
+where giaban>=0;
+3. kiểm tra phần trăm hoa hông nằm trong khoảng [0.5][10.0]
+select * from hoahong
+where phantramhoahong >=0.5 and phantramhoahong <=10.0
+4. Số sổ đỏ/sổ hồng (SoGoiGCN) là duy nhất trên toàn hệ thống.
+SELECT DISTINCT SoGoiGCN, MaBDS, DiaChi
+FROM BatDongSan;
+5. Business Rules: Một BĐS đang có hợp đồng bán độc quyền còn hiệu lực không được đăng tải bán bởi môi giới khác; Hợp đồng đặt cọc tự động hủy nếu quá 30 ngày khách không tiến hành ký Hợp đồng mua bán.
+
+1. Ngăn môi giới khác đăng bán BĐS độc quyền
+Quy tắc kiểm tra:
+- Cùng một bất động sản (MaBDS).
+- Hợp đồng ký gửi có loại Doc quyen.
+- Hợp đồng còn hiệu lực và ngày hiện tại nằm trong thời hạn hợp đồng.
+- Môi giới đăng tin phải đúng người được giao ký gửi (MaMoiGioi).
+Tạo trigger cho cả thêm mới và sửa tin đăng:
+
+
+!!! code thực hiện
+-- 1A. Kiểm tra khi thêm tin đăng
+CREATE TRIGGER KiemTraDangTin_DocQuyen_Insert
+BEFORE INSERT ON TinDang
+WHEN EXISTS (
+    SELECT 1
+    FROM HopDongKyGui H
+    WHERE H.MaBDS = NEW.MaBDS
+      AND H.LoaiKyGui = 'Doc quyen'
+      AND date('now') BETWEEN date(H.NgayBatDau)
+                          AND date(H.NgayKetThuc)
+      AND H.TrangThai = 'Con hieu luc'
+      AND H.MaMoiGioi <> NEW.MaMoiGioi
+)
+BEGIN
+    SELECT RAISE(ABORT,
+        'BDS dang co hop dong doc quyen voi moi gioi khac!');
+END;
+
+
+-- 1B. Kiểm tra khi thay đổi môi giới hoặc BĐS trong tin đăng
+CREATE TRIGGER KiemTraDangTin_DocQuyen_Update
+BEFORE UPDATE ON TinDang
+WHEN EXISTS (
+    SELECT 1
+    FROM HopDongKyGui H
+    WHERE H.MaBDS = NEW.MaBDS
+      AND H.LoaiKyGui = 'Doc quyen'
+      AND date('now') BETWEEN date(H.NgayBatDau)
+                          AND date(H.NgayKetThuc)
+      AND H.TrangThai = 'Con hieu luc'
+      AND H.MaMoiGioi <> NEW.MaMoiGioi
+)
+BEGIN
+    SELECT RAISE(ABORT,
+        'BDS dang co hop dong doc quyen voi moi gioi khac!');
+END;
+
+2. Tự động hủy hợp đồng đặt cọc sau 30 ngày
+Điều kiện:
+- Đã quá 30 ngày kể từ NgayDatCoc.
+- Chưa có hợp đồng mua bán tương ứng trong HopDongMuaBan.
+- Chuyển TrangThai của hợp đồng đặt cọc thành Da huy.
+
+!!! code thực hiện
+
+UPDATE HopDongDatCoc
+SET TrangThai = 'Da huy'
+WHERE date(NgayDatCoc, '+30 days') < date('now')
+  AND TrangThai <> 'Da huy'
+  AND NOT EXISTS (
+      SELECT 1
+      FROM GiaoDich GD
+      JOIN HopDongMuaBan HDMB
+          ON GD.MaGiaoDich = HDMB.MaGiaoDich
+      WHERE GD.MaHDDC = HopDongDatCoc.MaHDDC
+  );
+
+!!!!!code trả lời cầu hỏi
+3. Kiểm tra kết quả
+3.1. Kiểm tra các hợp đồng ký gửi độc quyền:
+SELECT *
+FROM HopDongKyGui
+WHERE LoaiKyGui = 'Doc quyen';
+
+
+3.2. Kiểm tra các tin đăng:
+SELECT *
+FROM TinDang;
+
+
+3.3. Kiểm tra các hợp đồng đặt cọc đã bị hủy:
+SELECT *
+FROM HopDongDatCoc
+WHERE TrangThai = 'Da huy';
+
+
+%%%%%%CÁC CÂU LỆNH TRUY VẤN&&&&&&&&
+
+1.Cơ bản: Tìm các căn hộ chung cư 2 phòng ngủ có giá dưới 3.5 tỷ VNĐ tại Quận 7.
+select * from batdongsan
+where loaibds = 'Can ho'
+and sophongngu = 2 and
+giaban <= 3500000000 and
+quanhuyen = 'Quận 7';
+2.Inner Join: Hiển thị danh sách khách hàng đã đi xem căn hộ mã BDS105 cùng kết quả phản hồi sau buổi xem.
+SELECT
+    KH.MaKhachHang,
+    KH.HoTen,
+    KH.SoDienThoai,
+    BDS.MaBDS,
+    BDS.DiaChi,
+    LXN.ThoiGianXem,
+    LXN.PhanHoi
+FROM LichXemNha LXN
+INNER JOIN KhachHang KH
+    ON LXN.MaKhachHang = KH.MaKhachHang
+INNER JOIN BatDongSan BDS
+    ON LXN.MaBDS = BDS.MaBDS
+WHERE BDS.MaBDS = 'BDS105';
+3. Group By: Tính tổng số tiền hoa hồng mà sàn thu được phân theo từng môi giới trong Quý 3.
+SELECT
+    MG.MaMoiGioi,
+    MG.HoTen,
+    SUM(HH.SoTienHoaHong) AS TongTienHoaHong
+FROM HoaHong HH
+INNER JOIN GiaoDich GD
+    ON HH.MaGiaoDich = GD.MaGiaoDich
+INNER JOIN MoiGioi MG
+    ON GD.MaMoiGioi = MG.MaMoiGioi
+WHERE strftime('%m', HH.NgayThu) IN ('07', '08', '09')
+GROUP BY MG.MaMoiGioi, MG.HoTen
+ORDER BY TongTienHoaHong DESC;
