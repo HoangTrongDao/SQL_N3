@@ -1,2 +1,239 @@
 Nhập lệnh
 commit change
+! lệnh import file 
+.mode csv
+.import --skip 1 "E:/DATA_BASE/File_csv/PhongKinhDoanh.csv" PhongKinhDoanh
+.import --skip 1 "E:/DATA_BASE/File_csv/MoiGioi.csv" MoiGioi
+.import --skip 1 "E:/DATA_BASE/File_csv/ChuSoHuu.csv" ChuSoHuu
+.import --skip 1 "E:/DATA_BASE/File_csv/KhachHang.csv" KhachHang
+.import --skip 1 "E:/DATA_BASE/File_csv/BatDongSan.csv" BatDongSan
+.import --skip 1 "E:/DATA_BASE/File_csv/HopDongKyGui.csv" HopDongKyGui
+.import --skip 1 "E:/DATA_BASE/File_csv/LichXemNha.csv" LichXemNha
+.import --skip 1 "E:/DATA_BASE/File_csv/HopDongDatCoc.csv" HopDongDatCoc
+.import --skip 1 "E:/DATA_BASE/File_csv/GiaoDich.csv" GiaoDich
+.import --skip 1 "E:/DATA_BASE/File_csv/HoaHong.csv" HoaHong
+.import --skip 1 "E:/DATA_BASE/File_csv/HopDongMuaBan.csv" HopDongMuaBan
+.import --skip 1 "E:/DATA_BASE/File_csv/HopDongThue.csv" HopDongThue
+.import --skip 1 "E:/DATA_BASE/File_csv/TinDang.csv" TinDang
+
+! lệnh tạo bảng.
+PRAGMA foreign_keys = ON;
+
+-- =============================================
+-- 1. BẢNG PHÒNG KINH DOANH
+-- =============================================
+CREATE TABLE PhongKinhDoanh (
+    MaPhong TEXT PRIMARY KEY,
+    TenPhong TEXT NOT NULL UNIQUE
+);
+
+-- =============================================
+-- 2. BẢNG MÔI GIỚI
+-- =============================================
+CREATE TABLE MoiGioi (
+    MaMoiGioi TEXT PRIMARY KEY,
+    HoTen TEXT NOT NULL,
+    SoDienThoai TEXT UNIQUE,
+    Email TEXT UNIQUE,
+    NgayVaoLam DATE NOT NULL,
+    MaPhong TEXT,
+    FOREIGN KEY (MaPhong) REFERENCES PhongKinhDoanh(MaPhong)
+);
+
+-- =============================================
+-- 3. BẢNG CHỦ SỞ HỮU
+-- =============================================
+CREATE TABLE ChuSoHuu (
+    MaChu TEXT PRIMARY KEY,
+    HoTen TEXT NOT NULL,
+    CCCD TEXT UNIQUE,
+    SoDienThoai TEXT UNIQUE,
+    Email TEXT UNIQUE
+);
+
+-- =============================================
+-- 4. BẢNG KHÁCH HÀNG
+-- =============================================
+CREATE TABLE KhachHang (
+    MaKhachHang TEXT PRIMARY KEY,
+    HoTen TEXT NOT NULL,
+    SoDienThoai TEXT UNIQUE,
+    Email TEXT UNIQUE
+);
+
+-- =============================================
+-- 5. BẢNG BẤT ĐỘNG SẢN
+-- =============================================
+CREATE TABLE BatDongSan (
+    MaBDS TEXT PRIMARY KEY,
+    MaChu TEXT NOT NULL,
+    LoaiBDS TEXT NOT NULL,
+    DiaChi TEXT NOT NULL,
+    QuanHuyen TEXT NOT NULL,
+    DienTich REAL NOT NULL CHECK (DienTich > 0),
+    GiaBan REAL NOT NULL CHECK (GiaBan > 0),
+    SoGoiGCN TEXT NOT NULL UNIQUE,
+    SoPhongNgu INTEGER DEFAULT 0 CHECK (SoPhongNgu >= 0),
+    TrangThai TEXT NOT NULL,
+    FOREIGN KEY (MaChu) REFERENCES ChuSoHuu(MaChu)
+);
+
+-- =============================================
+-- 6. BẢNG HỢP ĐỒNG KÝ GỬI
+-- =============================================
+CREATE TABLE HopDongKyGui (
+    MaHDKG TEXT PRIMARY KEY,
+    MaBDS TEXT NOT NULL,
+    MaMoiGioi TEXT NOT NULL,
+    LoaiKyGui TEXT NOT NULL,
+    NgayBatDau DATE NOT NULL,
+    NgayKetThuc DATE NOT NULL,
+    TrangThai TEXT NOT NULL,
+    CHECK (NgayKetThuc >= NgayBatDau),
+    FOREIGN KEY (MaBDS) REFERENCES BatDongSan(MaBDS),
+    FOREIGN KEY (MaMoiGioi) REFERENCES MoiGioi(MaMoiGioi)
+);
+
+-- =============================================
+-- 7. BẢNG LỊCH XEM NHÀ
+-- =============================================
+CREATE TABLE LichXemNha (
+    MaLichXem TEXT PRIMARY KEY,
+    MaKhachHang TEXT,
+    MaBDS TEXT,
+    MaMoiGioi TEXT,
+    ThoiGianXem DATETIME NOT NULL,
+    PhanHoi TEXT,
+    FOREIGN KEY (MaKhachHang) REFERENCES KhachHang(MaKhachHang),
+    FOREIGN KEY (MaBDS) REFERENCES BatDongSan(MaBDS),
+    FOREIGN KEY (MaMoiGioi) REFERENCES MoiGioi(MaMoiGioi)
+);
+
+-- =============================================
+-- 8. BẢNG HỢP ĐỒNG ĐẶT CỌC
+-- =============================================
+CREATE TABLE HopDongDatCoc (
+    MaHDDC TEXT PRIMARY KEY,
+    MaKhachHang TEXT,
+    MaBDS TEXT,
+    NgayDatCoc DATE NOT NULL,
+    SoTienCoc REAL NOT NULL CHECK (SoTienCoc > 0),
+    NgayHetHan DATE NOT NULL,
+    TrangThai TEXT NOT NULL,
+    CHECK (NgayHetHan >= NgayDatCoc),
+    FOREIGN KEY (MaKhachHang) REFERENCES KhachHang(MaKhachHang),
+    FOREIGN KEY (MaBDS) REFERENCES BatDongSan(MaBDS)
+);
+
+-- =============================================
+-- 9. BẢNG GIAO DỊCH
+-- =============================================
+CREATE TABLE GiaoDich (
+    MaGiaoDich TEXT PRIMARY KEY,
+    MaBDS TEXT,
+    MaKhachHang TEXT,
+    MaMoiGioi TEXT,
+    MaHDDC TEXT UNIQUE,
+    LoaiGiaoDich TEXT CHECK (LoaiGiaoDich IN ('Mua ban', 'Cho thue')),
+    NgayGiaoDich DATE,
+    GiaTriGiaoDich REAL CHECK (GiaTriGiaoDich > 0),
+    TrangThai TEXT,
+    FOREIGN KEY (MaBDS) REFERENCES BatDongSan(MaBDS),
+    FOREIGN KEY (MaKhachHang) REFERENCES KhachHang(MaKhachHang),
+    FOREIGN KEY (MaMoiGioi) REFERENCES MoiGioi(MaMoiGioi),
+    FOREIGN KEY (MaHDDC) REFERENCES HopDongDatCoc(MaHDDC)
+);
+
+-- =============================================
+-- 10. BẢNG HOA HỒNG
+-- =============================================
+CREATE TABLE HoaHong (
+    MaHoaHong TEXT PRIMARY KEY,
+    MaGiaoDich TEXT,
+    PhanTramHoaHong REAL CHECK (PhanTramHoaHong BETWEEN 0.5 AND 10),
+    SoTienHoaHong REAL CHECK (SoTienHoaHong >= 0),
+    NgayThu DATE,
+    TrangThai TEXT,
+    FOREIGN KEY (MaGiaoDich) REFERENCES GiaoDich(MaGiaoDich)
+);
+
+-- =============================================
+-- 11. BẢNG HỢP ĐỒNG MUA BÁN
+-- =============================================
+CREATE TABLE HopDongMuaBan (
+    MaHDMB TEXT PRIMARY KEY,
+    MaGiaoDich TEXT NOT NULL UNIQUE,
+    NgayKy DATE,
+    GiaTriHopDong REAL CHECK (GiaTriHopDong > 0),
+    PhuongThucThanhToan TEXT,
+    FOREIGN KEY (MaGiaoDich) REFERENCES GiaoDich(MaGiaoDich)
+);
+
+-- =============================================
+-- 12. BẢNG HỢP ĐỒNG THUÊ
+-- =============================================
+CREATE TABLE HopDongThue (
+    MaHDT TEXT PRIMARY KEY,
+    MaGiaoDich TEXT NOT NULL UNIQUE,
+    NgayKy DATE,
+    NgayBatDau DATE,
+    NgayKetThuc DATE,
+    TienThueThang REAL CHECK (TienThueThang > 0),
+    CHECK (NgayKetThuc > NgayBatDau),
+    FOREIGN KEY (MaGiaoDich) REFERENCES GiaoDich(MaGiaoDich)
+);
+
+-- =============================================
+-- 13. BẢNG TIN ĐĂNG
+-- =============================================
+CREATE TABLE TinDang (
+    MaTin TEXT PRIMARY KEY,
+    MaBDS TEXT,
+    MaMoiGioi TEXT,
+    NgayDang DATE,
+    FOREIGN KEY (MaBDS) REFERENCES BatDongSan(MaBDS),
+    FOREIGN KEY (MaMoiGioi) REFERENCES MoiGioi(MaMoiGioi)
+);
+
+! danh sách khóa chính
+STT	Tên bảng	Khóa chính (PK)
+1	PhongKinhDoanh	MaPhong
+2	MoiGioi	MaMoiGioi
+3	ChuSoHuu	MaChu
+4	KhachHang	MaKhachHang
+5	BatDongSan	MaBDS
+6	HopDongKyGui	MaHDKG
+7	LichXemNha	MaLichXem
+8	HopDongDatCoc	MaHDDC
+9	GiaoDich	MaGiaoDich
+10	HoaHong	MaHoaHong
+11	HopDongMuaBan	MaHDMB
+12	HopDongThue	MaHDT
+13	TinDang	MaTin
+
+! danh sách khóa 
+STT	Bảng chứa FK	Khóa ngoại (FK)	Tham chiếu đến
+1	MoiGioi	MaPhong	PhongKinhDoanh(MaPhong)
+2	BatDongSan	MaChu	ChuSoHuu(MaChu)
+3	HopDongKyGui	MaBDS	BatDongSan(MaBDS)
+4	HopDongKyGui	MaMoiGioi	MoiGioi(MaMoiGioi)
+5	LichXemNha	MaKhachHang	KhachHang(MaKhachHang)
+6	LichXemNha	MaBDS	BatDongSan(MaBDS)
+7	LichXemNha	MaMoiGioi	MoiGioi(MaMoiGioi)
+8	HopDongDatCoc	MaKhachHang	KhachHang(MaKhachHang)
+9	HopDongDatCoc	MaBDS	BatDongSan(MaBDS)
+10	GiaoDich	MaBDS	BatDongSan(MaBDS)
+11	GiaoDich	MaKhachHang	KhachHang(MaKhachHang)
+12	GiaoDich	MaMoiGioi	MoiGioi(MaMoiGioi)
+13	GiaoDich	MaHDDC	HopDongDatCoc(MaHDDC)
+14	HoaHong	MaGiaoDich	GiaoDich(MaGiaoDich)
+15	HopDongMuaBan	MaGiaoDich	GiaoDich(MaGiaoDich)
+16	HopDongThue	MaGiaoDich	GiaoDich(MaGiaoDich)
+17	TinDang	MaBDS	BatDongSan(MaBDS)
+18	TinDang	MaMoiGioi	MoiGioi(MaMoiGioi)
+
+! Các bảng không có khóa ngoại
+Có 3 bảng chỉ có khóa chính, không có khóa ngoại:
+- PhongKinhDoanh
+- ChuSoHuu
+- KhachHang
