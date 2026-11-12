@@ -134,3 +134,70 @@ INNER JOIN MoiGioi MG
 WHERE strftime('%m', HH.NgayThu) IN ('07', '08', '09')
 GROUP BY MG.MaMoiGioi, MG.HoTen
 ORDER BY TongTienHoaHong DESC;
+-- 5. OUTER JOIN: tất cả BĐS ký gửi + giao dịch tương ứng (kể cả chưa bán được)
+-- ---------------------------------------------------------------------
+SELECT b.MaBDS, b.LoaiBDS, b.DiaChi, b.TrangThai AS TrangThaiBDS,
+       gd.MaGiaoDich, gd.LoaiGiaoDich, gd.NgayGiaoDich,
+       gd.GiaTriGiaoDich, gd.TrangThai AS TrangThaiGiaoDich
+FROM BatDongSan b
+LEFT JOIN GiaoDich gd ON gd.MaBDS = b.MaBDS
+ORDER BY b.MaBDS;
+ 
+-- ---------------------------------------------------------------------
+-- 6. NOT IN: khách đã xem nhà nhưng chưa từng mua/thuê thành công BĐS nào
+--    (MaKhachHang trong GiaoDich không có NULL nên NOT IN an toàn)
+-- ---------------------------------------------------------------------
+SELECT kh.MaKhachHang, kh.HoTen, kh.SoDienThoai
+FROM KhachHang kh
+WHERE kh.MaKhachHang IN (SELECT MaKhachHang FROM LichXemNha)
+  AND kh.MaKhachHang NOT IN (
+        SELECT MaKhachHang
+        FROM GiaoDich
+        WHERE TrangThai = 'Thanh cong'
+          AND MaKhachHang IS NOT NULL
+  );
+ 
+-- ---------------------------------------------------------------------
+-- 7. Complex Subquery: môi giới có tổng hoa hồng cao nhất trong Phòng KD số 1 (P01)
+--    (SQLite không hỗ trợ >= ALL, dùng = (SELECT MAX(...)) thay thế)
+-- ---------------------------------------------------------------------
+SELECT mg.MaMoiGioi, mg.HoTen, SUM(hh.SoTienHoaHong) AS TongHoaHong
+FROM MoiGioi mg
+JOIN GiaoDich gd ON gd.MaMoiGioi  = mg.MaMoiGioi
+JOIN HoaHong  hh ON hh.MaGiaoDich = gd.MaGiaoDich
+WHERE mg.MaPhong = 'P01'
+  AND hh.TrangThai = 'Da thu'
+GROUP BY mg.MaMoiGioi, mg.HoTen
+HAVING SUM(hh.SoTienHoaHong) = (
+    SELECT MAX(Tong) FROM (
+        SELECT SUM(hh2.SoTienHoaHong) AS Tong
+        FROM MoiGioi mg2
+        JOIN GiaoDich gd2 ON gd2.MaMoiGioi  = mg2.MaMoiGioi
+        JOIN HoaHong  hh2 ON hh2.MaGiaoDich = gd2.MaGiaoDich
+        WHERE mg2.MaPhong = 'P01'
+          AND hh2.TrangThai = 'Da thu'
+        GROUP BY mg2.MaMoiGioi
+    )
+);
+ 
+-- ---------------------------------------------------------------------
+-- 8. Window Functions: xếp hạng môi giới theo từng tháng (RANK)
+--    + tỷ lệ đóng góp hoa hồng trong tháng đó
+-- ---------------------------------------------------------------------
+WITH HoaHongThang AS (
+    SELECT gd.MaMoiGioi,
+           strftime('%Y-%m', hh.NgayThu) AS Thang,
+           SUM(hh.SoTienHoaHong)         AS HoaHongThang
+    FROM HoaHong hh
+    JOIN GiaoDich gd ON gd.MaGiaoDich = hh.MaGiaoDich
+    WHERE hh.TrangThai = 'Da thu'
+      AND hh.NgayThu IS NOT NULL
+    GROUP BY gd.MaMoiGioi, strftime('%Y-%m', hh.NgayThu)
+)
+SELECT t.Thang, mg.MaMoiGioi, mg.HoTen, t.HoaHongThang,
+       RANK() OVER (PARTITION BY t.Thang ORDER BY t.HoaHongThang DESC) AS XepHang,
+       ROUND(100.0 * t.HoaHongThang
+             / SUM(t.HoaHongThang) OVER (PARTITION BY t.Thang), 2)     AS TyLeDongGop_PhanTram
+FROM HoaHongThang t
+JOIN MoiGioi mg ON mg.MaMoiGioi = t.MaMoiGioi
+ORDER BY t.Thang, XepHang;
