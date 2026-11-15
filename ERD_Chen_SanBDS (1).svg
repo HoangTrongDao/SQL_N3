@@ -1,0 +1,349 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2640 3280" width="2640" height="3280" font-family="Arial, Helvetica, sans-serif">
+<rect width="2640" height="3280" fill="#ffffff"/>
+<text x="1320.0" y="64" text-anchor="middle" font-size="40" font-weight="bold" fill="#2C2C2A">Sơ đồ E/R – Quản lý sàn giao dịch và môi giới bất động sản</text>
+<polyline points="480,282 480,740" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="2120,282 2120,740" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="580,800 1170,800" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="580,1140 1170,1140" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="580,1480 1170,1480" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="580,2160 1170,2160" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1430,800 2020,800" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1430,1126 2020,1126" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1430,1480 2020,1480" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1300,1512 1300,1788" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1300,1852 1300,2128" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1300,2192 1300,2468" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1430,1154 1880,1154 1880,2500 1520,2500" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1300,2532 1300,2720" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="580,2720 2020,2720" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="580,2720 580,2968" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="1300,2720 1300,2968" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<polyline points="2020,2720 2020,2968" fill="none" stroke="#5F5E5A" stroke-width="2.4"/>
+<line x1="396.5" y1="166.0" x2="458.0" y2="218.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="307.5" y1="166.0" x2="402.0" y2="218.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="559.0" y1="166.0" x2="502.0" y2="218.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="670.5" y1="166.0" x2="558.0" y2="218.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="2027.5" y1="166.0" x2="2080.0" y2="218.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="2217.0" y1="166.0" x2="2160.0" y2="218.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="190.0" y1="790.0" x2="380.0" y2="790.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="943.3" x2="380.0" y2="943.3" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="1096.7" x2="380.0" y2="1096.7" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="1250.0" x2="380.0" y2="1250.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="1403.3" x2="380.0" y2="1403.3" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="1556.7" x2="380.0" y2="1556.7" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="1710.0" x2="380.0" y2="1710.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="1863.3" x2="380.0" y2="1863.3" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="2016.7" x2="380.0" y2="2016.7" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="190.0" y1="2170.0" x2="380.0" y2="2170.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="2440.0" y1="790.0" x2="2220.0" y2="790.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="2440.0" y1="930.0" x2="2220.0" y2="930.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="2440.0" y1="1070.0" x2="2220.0" y2="1070.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="2440.0" y1="1210.0" x2="2220.0" y2="1210.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="2440.0" y1="1350.0" x2="2220.0" y2="1350.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="2440.0" y1="1490.0" x2="2220.0" y2="1490.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="1216.5" y1="716.0" x2="1260.0" y2="768.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1383.5" y1="716.0" x2="1340.0" y2="768.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1198.5" y1="884.0" x2="1260.0" y2="832.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1397.0" y1="884.0" x2="1340.0" y2="832.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1212.0" y1="1056.0" x2="1278.0" y2="1108.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1118.5" y1="1056.0" x2="1192.0" y2="1108.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1401.5" y1="1056.0" x2="1322.0" y2="1108.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1526.5" y1="1056.0" x2="1408.0" y2="1108.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1194.0" y1="1224.0" x2="1278.0" y2="1172.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1055.5" y1="1224.0" x2="1192.0" y2="1172.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1428.5" y1="1224.0" x2="1322.0" y2="1172.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1580.5" y1="1224.0" x2="1408.0" y2="1172.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1198.5" y1="1396.0" x2="1278.0" y2="1448.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1091.5" y1="1396.0" x2="1192.0" y2="1448.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1410.5" y1="1396.0" x2="1340.0" y2="1448.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1198.5" y1="1564.0" x2="1278.0" y2="1512.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1064.5" y1="1564.0" x2="1192.0" y2="1512.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1392.5" y1="1564.0" x2="1340.0" y2="1512.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1189.5" y1="1736.0" x2="1260.0" y2="1788.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="1383.5" y1="1736.0" x2="1340.0" y2="1788.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="1189.5" y1="1904.0" x2="1260.0" y2="1852.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="1383.5" y1="1904.0" x2="1340.0" y2="1852.0" stroke="#0F6E56" stroke-width="1.6"/>
+<line x1="1212.0" y1="2076.0" x2="1278.0" y2="2128.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1091.5" y1="2076.0" x2="1192.0" y2="2128.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1383.5" y1="2076.0" x2="1322.0" y2="2128.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1495.0" y1="2076.0" x2="1408.0" y2="2128.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1198.5" y1="2244.0" x2="1278.0" y2="2192.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1069.0" y1="2244.0" x2="1192.0" y2="2192.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1401.5" y1="2244.0" x2="1340.0" y2="2192.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1194.0" y1="2416.0" x2="1278.0" y2="2468.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1078.0" y1="2416.0" x2="1190.0" y2="2468.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="980.0" y1="2416.0" x2="1102.0" y2="2468.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1383.5" y1="2416.0" x2="1322.0" y2="2468.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1499.5" y1="2416.0" x2="1498.0" y2="2468.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1198.5" y1="2584.0" x2="1278.0" y2="2532.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1060.0" y1="2584.0" x2="1190.0" y2="2532.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="908.0" y1="2584.0" x2="1102.0" y2="2532.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1424.0" y1="2584.0" x2="1322.0" y2="2532.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1571.5" y1="2584.0" x2="1498.0" y2="2532.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="374.5" y1="2952.0" x2="480.0" y2="2982.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="370.0" y1="3048.0" x2="480.0" y2="3018.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="803.5" y1="2952.0" x2="680.0" y2="2982.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="776.5" y1="3048.0" x2="680.0" y2="3018.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1088.0" y1="2952.0" x2="1180.0" y2="2982.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1070.0" y1="3048.0" x2="1180.0" y2="3018.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1512.0" y1="2952.0" x2="1420.0" y2="2982.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1570.5" y1="3048.0" x2="1420.0" y2="3018.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1832.5" y1="2952.0" x2="1920.0" y2="2982.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1810.0" y1="3048.0" x2="1920.0" y2="3018.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="2212.0" y1="2952.0" x2="2120.0" y2="2982.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="2230.0" y1="3048.0" x2="2120.0" y2="3018.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="1909.5" y1="3130.0" x2="1980.0" y2="3032.0" stroke="#534AB7" stroke-width="1.6"/>
+<line x1="2139.5" y1="3130.0" x2="2060.0" y2="3032.0" stroke="#534AB7" stroke-width="1.6"/>
+<rect x="380.0" y="218.0" width="200" height="64" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="3.2"/>
+<text x="480" y="250" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#085041">ChuSoHuu</text>
+<rect x="2000.0" y="218.0" width="240" height="64" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="3.2"/>
+<text x="2120" y="250" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#085041">PhongKinhDoanh</text>
+<rect x="380.0" y="740.0" width="200" height="1480" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="480" y="1480" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">BatDongSan</text>
+<rect x="2020.0" y="740.0" width="200" height="800" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="3.2"/>
+<text x="2120" y="1140" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#085041">MoiGioi</text>
+<rect x="1170.0" y="768.0" width="260" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="1300" y="800" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">TinDang</text>
+<rect x="1170.0" y="1108.0" width="260" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="1300" y="1140" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">HopDongKyGui</text>
+<rect x="1170.0" y="1448.0" width="260" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="1300" y="1480" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">LichXemNha</text>
+<rect x="1170.0" y="1788.0" width="260" height="64" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="3.2"/>
+<text x="1300" y="1820" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#085041">KhachHang</text>
+<rect x="1170.0" y="2128.0" width="260" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="1300" y="2160" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">HopDongDatCoc</text>
+<rect x="1080.0" y="2468.0" width="440" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="1300" y="2500" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">GiaoDich</text>
+<rect x="480.0" y="2968.0" width="200" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="580" y="3000" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">HoaHong</text>
+<rect x="1180.0" y="2968.0" width="240" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="1300" y="3000" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">HopDongMuaBan</text>
+<rect x="1920.0" y="2968.0" width="200" height="64" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="3.2"/>
+<text x="2020" y="3000" text-anchor="middle" dominant-baseline="central" font-size="25" font-weight="bold" fill="#3C3489">HopDongThue</text>
+<polygon points="410.0,511 480,475.0 550.0,511 480,547.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="480" y="511" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Sở hữu</text>
+<polygon points="2050.0,511 2120,475.0 2190.0,511 2120,547.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="2120" y="511" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Quản lý</text>
+<polygon points="790.0,800 875,764.0 960.0,800 875,836.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="875" y="800" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Được đăng</text>
+<polygon points="805.0,1140 875,1104.0 945.0,1140 875,1176.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="875" y="1140" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Ký gửi</text>
+<polygon points="790.0,1480 875,1444.0 960.0,1480 875,1516.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="875" y="1480" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Được xem</text>
+<polygon points="790.0,2160 875,2124.0 960.0,2160 875,2196.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="875" y="2160" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Được cọc</text>
+<polygon points="1650.0,800 1725,764.0 1800.0,800 1725,836.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1725" y="800" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Đăng tin</text>
+<polygon points="1645.0,1126 1725,1090.0 1805.0,1126 1725,1162.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1725" y="1126" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Thực hiện</text>
+<polygon points="1640.0,1480 1725,1444.0 1810.0,1480 1725,1516.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1725" y="1480" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Dẫn khách</text>
+<polygon points="1225.0,1650 1300,1614.0 1375.0,1650 1300,1686.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1300" y="1650" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Tham gia</text>
+<polygon points="1230.0,1990 1300,1954.0 1370.0,1990 1300,2026.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1300" y="1990" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Đặt cọc</text>
+<polygon points="1225.0,2330 1300,2294.0 1375.0,2330 1300,2366.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1300" y="2330" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Dẫn đến</text>
+<polygon points="1815.0,1827 1880,1791.0 1945.0,1827 1880,1863.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1880" y="1827" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Căn cứ</text>
+<polygon points="530.0,2850 580,2814.0 630.0,2850 580,2886.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="580" y="2850" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Có</text>
+<polygon points="1250.0,2850 1300,2814.0 1350.0,2850 1300,2886.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="1300" y="2850" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Lập</text>
+<polygon points="1970.0,2850 2020,2814.0 2070.0,2850 2020,2886.0" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2.4"/>
+<text x="2020" y="2850" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#2C2C2A">Lập</text>
+<ellipse cx="396.5" cy="166.0" rx="37.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="396.5" y="166.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041" text-decoration="underline" font-weight="bold">MaChu</text>
+<ellipse cx="307.5" cy="166.0" rx="37.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="307.5" y="166.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">HoTen</text>
+<ellipse cx="559.0" cy="166.0" rx="33.0" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="559.0" y="166.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">CCCD</text>
+<ellipse cx="670.5" cy="166.0" rx="64.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="670.5" y="166.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">SoDienThoai</text>
+<ellipse cx="2027.5" cy="166.0" rx="46.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="2027.5" y="166.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041" text-decoration="underline" font-weight="bold">MaPhong</text>
+<ellipse cx="2217.0" cy="166.0" rx="51.0" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="2217.0" y="166.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">TenPhong</text>
+<ellipse cx="190.0" cy="790.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="790.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaBDS</text>
+<ellipse cx="190.0" cy="943.3" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="190.0" y="943.3" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaChu</text>
+<ellipse cx="190.0" cy="1096.7" rx="46.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="1096.7" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">LoaiBDS</text>
+<ellipse cx="190.0" cy="1250.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="1250.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">DiaChi</text>
+<ellipse cx="190.0" cy="1403.3" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="1403.3" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">QuanHuyen</text>
+<ellipse cx="190.0" cy="1556.7" rx="51.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="1556.7" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">DienTich</text>
+<ellipse cx="190.0" cy="1710.0" rx="51.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="1710.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">SoGoiGCN</text>
+<ellipse cx="190.0" cy="1863.3" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="1863.3" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">SoPhongNgu</text>
+<ellipse cx="190.0" cy="2016.7" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="2016.7" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">GiaBan</text>
+<ellipse cx="190.0" cy="2170.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="190.0" y="2170.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">TrangThai</text>
+<ellipse cx="2440.0" cy="790.0" rx="55.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="2440.0" y="790.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041" text-decoration="underline" font-weight="bold">MaMoiGioi</text>
+<ellipse cx="2440.0" cy="930.0" rx="37.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="2440.0" y="930.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">HoTen</text>
+<ellipse cx="2440.0" cy="1070.0" rx="64.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="2440.0" y="1070.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">SoDienThoai</text>
+<ellipse cx="2440.0" cy="1210.0" rx="37.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="2440.0" y="1210.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">Email</text>
+<ellipse cx="2440.0" cy="1350.0" rx="60.0" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="2440.0" y="1350.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">NgayVaoLam</text>
+<ellipse cx="2440.0" cy="1490.0" rx="46.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="2440.0" y="1490.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">MaPhong</text>
+<ellipse cx="1216.5" cy="716.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1216.5" y="716.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaTin</text>
+<ellipse cx="1383.5" cy="716.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1383.5" y="716.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaBDS</text>
+<ellipse cx="1198.5" cy="884.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1198.5" y="884.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaMoiGioi</text>
+<ellipse cx="1397.0" cy="884.0" rx="51.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1397.0" y="884.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayDang</text>
+<ellipse cx="1212.0" cy="1056.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1212.0" y="1056.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaHDKG</text>
+<ellipse cx="1118.5" cy="1056.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1118.5" y="1056.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaBDS</text>
+<ellipse cx="1401.5" cy="1056.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1401.5" y="1056.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaMoiGioi</text>
+<ellipse cx="1526.5" cy="1056.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1526.5" y="1056.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">LoaiKyGui</text>
+<ellipse cx="1194.0" cy="1224.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1194.0" y="1224.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayBatDau</text>
+<ellipse cx="1055.5" cy="1224.0" rx="64.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1055.5" y="1224.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayKetThuc</text>
+<ellipse cx="1428.5" cy="1224.0" rx="82.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1428.5" y="1224.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">PhanTramHoaHong</text>
+<ellipse cx="1580.5" cy="1224.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1580.5" y="1224.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">TrangThai</text>
+<ellipse cx="1198.5" cy="1396.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1198.5" y="1396.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaLichXem</text>
+<ellipse cx="1091.5" cy="1396.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1091.5" y="1396.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaBDS</text>
+<ellipse cx="1410.5" cy="1396.0" rx="64.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1410.5" y="1396.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaKhachHang</text>
+<ellipse cx="1198.5" cy="1564.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1198.5" y="1564.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaMoiGioi</text>
+<ellipse cx="1064.5" cy="1564.0" rx="64.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1064.5" y="1564.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">ThoiGianXem</text>
+<ellipse cx="1392.5" cy="1564.0" rx="46.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1392.5" y="1564.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">PhanHoi</text>
+<ellipse cx="1189.5" cy="1736.0" rx="64.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="1189.5" y="1736.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041" text-decoration="underline" font-weight="bold">MaKhachHang</text>
+<ellipse cx="1383.5" cy="1736.0" rx="37.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="1383.5" y="1736.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">HoTen</text>
+<ellipse cx="1189.5" cy="1904.0" rx="64.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="1189.5" y="1904.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">SoDienThoai</text>
+<ellipse cx="1383.5" cy="1904.0" rx="37.5" ry="21" fill="#F7FCFA" stroke="#0F6E56" stroke-width="2.2"/>
+<text x="1383.5" y="1904.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#085041">Email</text>
+<ellipse cx="1212.0" cy="2076.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1212.0" y="2076.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaHDDC</text>
+<ellipse cx="1091.5" cy="2076.0" rx="64.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1091.5" y="2076.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaKhachHang</text>
+<ellipse cx="1383.5" cy="2076.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1383.5" y="2076.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaBDS</text>
+<ellipse cx="1495.0" cy="2076.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1495.0" y="2076.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayDatCoc</text>
+<ellipse cx="1198.5" cy="2244.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1198.5" y="2244.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">SoTienCoc</text>
+<ellipse cx="1069.0" cy="2244.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1069.0" y="2244.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayHetHan</text>
+<ellipse cx="1401.5" cy="2244.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1401.5" y="2244.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">TrangThai</text>
+<ellipse cx="1194.0" cy="2416.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1194.0" y="2416.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaGiaoDich</text>
+<ellipse cx="1078.0" cy="2416.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1078.0" y="2416.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaHDDC</text>
+<ellipse cx="980.0" cy="2416.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="980.0" y="2416.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaHDKG</text>
+<ellipse cx="1383.5" cy="2416.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1383.5" y="2416.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaBDS</text>
+<ellipse cx="1499.5" cy="2416.0" rx="64.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1499.5" y="2416.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaKhachHang</text>
+<ellipse cx="1198.5" cy="2584.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1198.5" y="2584.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaMoiGioi</text>
+<ellipse cx="1060.0" cy="2584.0" rx="69.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1060.0" y="2584.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">LoaiGiaoDich</text>
+<ellipse cx="908.0" cy="2584.0" rx="69.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="908.0" y="2584.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayGiaoDich</text>
+<ellipse cx="1424.0" cy="2584.0" rx="78.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1424.0" y="2584.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">GiaTriGiaoDich</text>
+<ellipse cx="1571.5" cy="2584.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1571.5" y="2584.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">TrangThai</text>
+<ellipse cx="374.5" cy="2952.0" rx="55.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="374.5" y="2952.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaHoaHong</text>
+<ellipse cx="370.0" cy="3048.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="370.0" y="3048.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaGiaoDich</text>
+<ellipse cx="803.5" cy="2952.0" rx="73.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="803.5" y="2952.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">SoTienHoaHong</text>
+<ellipse cx="776.5" cy="3048.0" rx="46.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="776.5" y="3048.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayThu</text>
+<ellipse cx="1088.0" cy="2952.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1088.0" y="2952.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaHDMB</text>
+<ellipse cx="1070.0" cy="3048.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1070.0" y="3048.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaGiaoDich</text>
+<ellipse cx="1512.0" cy="2952.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1512.0" y="2952.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayKy</text>
+<ellipse cx="1570.5" cy="3048.0" rx="100.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1570.5" y="3048.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">PhuongThucThanhToan</text>
+<ellipse cx="1832.5" cy="2952.0" rx="37.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1832.5" y="2952.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489" text-decoration="underline" font-weight="bold">MaHDT</text>
+<ellipse cx="1810.0" cy="3048.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2" stroke-dasharray="7 5"/>
+<text x="1810.0" y="3048.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">MaGiaoDich</text>
+<ellipse cx="2212.0" cy="2952.0" rx="42.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="2212.0" y="2952.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayKy</text>
+<ellipse cx="2230.0" cy="3048.0" rx="60.0" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="2230.0" y="3048.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayBatDau</text>
+<ellipse cx="1909.5" cy="3130.0" rx="64.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="1909.5" y="3130.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">NgayKetThuc</text>
+<ellipse cx="2139.5" cy="3130.0" rx="73.5" ry="21" fill="#FAF9FF" stroke="#534AB7" stroke-width="2.2"/>
+<text x="2139.5" y="3130.0" text-anchor="middle" dominant-baseline="central" font-size="16.5" fill="#3C3489">TienThueThang</text>
+<text x="492" y="312" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="492" y="730" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="2132" y="312" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="2132" y="730" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="590" y="790" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1136" y="790" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="590" y="1130" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1136" y="1130" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="590" y="1470" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1136" y="1470" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="590" y="2150" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1136" y="2150" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="1440" y="788" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="1990" y="788" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1440" y="1112" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="1990" y="1112" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1440" y="1468" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="1990" y="1468" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1312" y="1546" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="1312" y="1782" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1312" y="1886" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1312" y="2120" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="1312" y="2226" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1312" y="2462" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1440" y="1184" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1532" y="2486" font-size="28" font-weight="bold" fill="#2C2C2A">N</text>
+<text x="1312" y="2562" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="592" y="2956" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="1312" y="2956" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<text x="2032" y="2956" font-size="28" font-weight="bold" fill="#2C2C2A">1</text>
+<rect x="1000" y="110" width="30" height="20" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
+<text x="1042" y="126" font-size="18" fill="#2C2C2A">Bảng: con người, tổ chức</text>
+<rect x="1000" y="146" width="30" height="20" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+<text x="1042" y="162" font-size="18" fill="#2C2C2A">Bảng: BĐS và nghiệp vụ</text>
+<polygon points="1000,194 1015,180 1030,194 1015,208" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="2"/>
+<text x="1042" y="200" font-size="18" fill="#2C2C2A">Quan hệ</text>
+<ellipse cx="1440" cy="120" rx="26" ry="12" fill="#fff" stroke="#5F5E5A" stroke-width="2"/>
+<text x="1480" y="126" font-size="18" fill="#2C2C2A">Thuộc tính</text>
+<ellipse cx="1440" cy="156" rx="26" ry="12" fill="#fff" stroke="#5F5E5A" stroke-width="2"/>
+<text x="1440" y="156" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" text-decoration="underline" fill="#2C2C2A">Ma</text>
+<text x="1480" y="162" font-size="18" fill="#2C2C2A">Khóa chính (gạch chân)</text>
+<ellipse cx="1440" cy="192" rx="26" ry="12" fill="#fff" stroke="#5F5E5A" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1480" y="198" font-size="18" fill="#2C2C2A">Khóa ngoại (nét đứt)</text>
+<text x="1440" y="232" font-size="18" fill="#2C2C2A">1 = một, N = nhiều</text>
+</svg>
