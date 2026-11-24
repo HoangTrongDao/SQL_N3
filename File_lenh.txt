@@ -237,3 +237,178 @@ Có 3 bảng chỉ có khóa chính, không có khóa ngoại:
 - PhongKinhDoanh
 - ChuSoHuu
 - KhachHang
+
+! lệnh tạo bảng tạo dbdiogram
+Table PhongKinhDoanh {
+  MaPhong TEXT [pk]
+  TenPhong TEXT [not null, unique]
+}
+
+Table MoiGioi {
+  MaMoiGioi TEXT [pk]
+  HoTen TEXT [not null]
+  SoDienThoai TEXT [unique]
+  Email TEXT [unique]
+  NgayVaoLam DATE [not null]
+  MaPhong TEXT
+}
+
+Table ChuSoHuu {
+  MaChu TEXT [pk]
+  HoTen TEXT [not null]
+  CCCD TEXT [unique]
+  SoDienThoai TEXT [unique]
+  Email TEXT [unique]
+}
+
+Table KhachHang {
+  MaKhachHang TEXT [pk]
+  HoTen TEXT [not null]
+  SoDienThoai TEXT [unique]
+  Email TEXT [unique]
+}
+
+Table BatDongSan {
+  MaBDS TEXT [pk]
+  MaChu TEXT [not null]
+  LoaiBDS TEXT [not null]
+  DiaChi TEXT [not null]
+  QuanHuyen TEXT [not null]
+  DienTich REAL [not null]
+  GiaBan REAL [not null]
+  SoGoiGCN TEXT [not null, unique]
+  SoPhongNgu INTEGER [default: 0]
+  TrangThai TEXT [not null]
+}
+
+Table HopDongKyGui {
+  MaHDKG TEXT [pk]
+  MaBDS TEXT [not null]
+  MaMoiGioi TEXT [not null]
+  LoaiKyGui TEXT [not null]
+  NgayBatDau DATE [not null]
+  NgayKetThuc DATE [not null]
+  TrangThai TEXT [not null]
+}
+
+Table LichXemNha {
+  MaLichXem TEXT [pk]
+  MaKhachHang TEXT
+  MaBDS TEXT
+  MaMoiGioi TEXT
+  ThoiGianXem DATETIME [not null]
+  PhanHoi TEXT
+}
+
+Table HopDongDatCoc {
+  MaHDDC TEXT [pk]
+  MaKhachHang TEXT
+  MaBDS TEXT
+  NgayDatCoc DATE [not null]
+  SoTienCoc REAL [not null]
+  NgayHetHan DATE [not null]
+  TrangThai TEXT [not null]
+}
+
+Table GiaoDich {
+  MaGiaoDich TEXT [pk]
+  MaBDS TEXT
+  MaKhachHang TEXT
+  MaMoiGioi TEXT
+  MaHDDC TEXT [unique]
+  LoaiGiaoDich TEXT
+  NgayGiaoDich DATE
+  GiaTriGiaoDich REAL
+  TrangThai TEXT
+}
+
+Table HoaHong {
+  MaHoaHong TEXT [pk]
+  MaGiaoDich TEXT
+  PhanTramHoaHong REAL
+  SoTienHoaHong REAL
+  NgayThu DATE
+  TrangThai TEXT
+}
+
+Table HopDongMuaBan {
+  MaHDMB TEXT [pk]
+  MaGiaoDich TEXT [not null, unique]
+  NgayKy DATE
+  GiaTriHopDong REAL
+  PhuongThucThanhToan TEXT
+}
+
+Table HopDongThue {
+  MaHDT TEXT [pk]
+  MaGiaoDich TEXT [not null, unique]
+  NgayKy DATE
+  NgayBatDau DATE
+  NgayKetThuc DATE
+  TienThueThang REAL
+}
+
+Table TinDang {
+  MaTin TEXT [pk]
+  MaBDS TEXT
+  MaMoiGioi TEXT
+  NgayDang DATE
+}
+
+// ===================================
+// KHAI BAO CAC MOI QUAN HE (FOREIGN KEY)
+// ===================================
+
+// Phong kinh doanh - Moi gioi
+Ref: MoiGioi.MaPhong > PhongKinhDoanh.MaPhong
+
+// Chu so huu - Bat dong san
+Ref: BatDongSan.MaChu > ChuSoHuu.MaChu
+
+// Bat dong san - Hop dong ky gui
+Ref: HopDongKyGui.MaBDS > BatDongSan.MaBDS
+
+// Moi gioi - Hop dong ky gui
+Ref: HopDongKyGui.MaMoiGioi > MoiGioi.MaMoiGioi
+
+// Khach hang - Lich xem nha
+Ref: LichXemNha.MaKhachHang > KhachHang.MaKhachHang
+
+// Bat dong san - Lich xem nha
+Ref: LichXemNha.MaBDS > BatDongSan.MaBDS
+
+// Moi gioi - Lich xem nha
+Ref: LichXemNha.MaMoiGioi > MoiGioi.MaMoiGioi
+
+// Khach hang - Hop dong dat coc
+Ref: HopDongDatCoc.MaKhachHang > KhachHang.MaKhachHang
+
+// Bat dong san - Hop dong dat coc
+Ref: HopDongDatCoc.MaBDS > BatDongSan.MaBDS
+
+// Bat dong san - Giao dich
+Ref: GiaoDich.MaBDS > BatDongSan.MaBDS
+
+// Khach hang - Giao dich
+Ref: GiaoDich.MaKhachHang > KhachHang.MaKhachHang
+
+// Moi gioi - Giao dich
+Ref: GiaoDich.MaMoiGioi > MoiGioi.MaMoiGioi
+
+// Hop dong dat coc - Giao dich
+Ref: GiaoDich.MaHDDC - HopDongDatCoc.MaHDDC
+
+// Giao dich - Hoa hong
+Ref: HoaHong.MaGiaoDich > GiaoDich.MaGiaoDich
+
+// Giao dich - Hop dong mua ban
+Ref: HopDongMuaBan.MaGiaoDich - GiaoDich.MaGiaoDich
+
+// Giao dich - Hop dong thue
+Ref: HopDongThue.MaGiaoDich - GiaoDich.MaGiaoDich
+
+// Bat dong san - Tin dang
+Ref: TinDang.MaBDS > BatDongSan.MaBDS
+
+// Moi gioi - Tin dang
+Ref: TinDang.MaMoiGioi > MoiGioi.MaMoiGioi
