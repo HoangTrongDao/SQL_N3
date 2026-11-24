@@ -135,16 +135,17 @@ WHERE strftime('%m', HH.NgayThu) IN ('07', '08', '09')
 GROUP BY MG.MaMoiGioi, MG.HoTen
 ORDER BY TongTienHoaHong DESC;
 4. Having: Lọc danh sách môi giới có tổng giá trị giao dịch thành công trong năm đạt trên 50 tỷ VNĐ
-SELECT 
+SELECT
     mg.MaMoiGioi,
     mg.HoTen AS TenMoiGioi,
     SUM(gd.GiaTriGiaoDich) AS TongGiaTriGiaoDich
 FROM MoiGioi mg
-JOIN GiaoDich gd ON mg.MaMoiGioi = gd.MaMoiGioi
-WHERE gd.TrangThai = 'Thành công' 
+JOIN GiaoDich gd
+    ON mg.MaMoiGioi = gd.MaMoiGioi
+WHERE gd.TrangThai = 'Thanh cong'
   AND strftime('%Y', gd.NgayGiaoDich) = '2026'
 GROUP BY mg.MaMoiGioi, mg.HoTen
-HAVING SUM(gd.GiaTriGiaoDich) > 50000000000;
+HAVING SUM(gd.GiaTriGiaoDich) > 5000.0;
 -- 5. OUTER JOIN: tất cả BĐS ký gửi + giao dịch tương ứng (kể cả chưa bán được)
 -- ---------------------------------------------------------------------
 SELECT b.MaBDS, b.LoaiBDS, b.DiaChi, b.TrangThai AS TrangThaiBDS,
